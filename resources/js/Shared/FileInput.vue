@@ -1,6 +1,6 @@
 <script>
   import { nanoid } from 'nanoid'
-  import Label from '@/Shared/Label.svelte'
+  import Label from '@/Shared/Label.vue'
 
   export let id = `file-input-${nanoid(5)}`
   export let value

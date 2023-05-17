@@ -9,8 +9,8 @@
   import Dropdown from '@/Shared/Dropdown.svelte'
   import FlashMessages from '@/Shared/FlashMessages.svelte'
   import Icon from '@/Shared/Icon.svelte'
-  import Logo from '@/Shared/Logo.svelte'
-  import MainMenu from '@/Shared/MainMenu.svelte'
+  import Logo from '@/Shared/Logo.vue'
+  import MainMenu from '@/Shared/MainMenu.vue'
 </script>
 
 <svelte:head>

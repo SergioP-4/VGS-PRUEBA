@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
@@ -140,3 +142,63 @@ Route::get('reports', [ReportsController::class, 'index'])
 Route::get('/img/{path}', [ImagesController::class, 'show'])
     ->where('path', '.*')
     ->name('image');
+
+// Categories
+
+Route::get('categories', [CategoriesController::class, 'index'])
+  ->name('categories')
+  ->middleware('auth');
+
+Route::get('categories/create', [CategoriesController::class, 'create'])
+  ->name('categories.create')
+  ->middleware('auth');
+
+Route::post('categories', [CategoriesController::class, 'store'])
+  ->name('categories.store')
+  ->middleware('auth');
+
+Route::get('categories/{category}/edit', [CategoriesController::class, 'edit'])
+  ->name('categories.edit')
+  ->middleware('auth');
+
+Route::put('categories/{category}', [CategoriesController::class, 'update'])
+  ->name('categories.update')
+  ->middleware('auth');
+
+Route::delete('categories/{category}', [CategoriesController::class, 'destroy'])
+  ->name('categories.destroy')
+  ->middleware('auth');
+
+Route::put('categories/{category}/restore', [CategoriesController::class, 'restore'])
+  ->name('categories.restore')
+  ->middleware('auth');
+
+// Organizations
+
+Route::get('article', [ArticleController::class, 'index'])
+  ->name('article')
+  ->middleware('auth');
+
+Route::get('article/create', [ArticleController::class, 'create'])
+  ->name('article.create')
+  ->middleware('auth');
+
+Route::post('article', [ArticleController::class, 'store'])
+  ->name('article.store')
+  ->middleware('auth');
+
+Route::get('article/{article}/edit', [ArticleController::class, 'edit'])
+  ->name('article.edit')
+  ->middleware('auth');
+
+Route::put('article/{article}', [ArticleController::class, 'update'])
+  ->name('article.update')
+  ->middleware('auth');
+
+Route::delete('article/{article}', [ArticleController::class, 'destroy'])
+  ->name('article.destroy')
+  ->middleware('auth');
+
+Route::put('article/{article}/restore', [ArticleController::class, 'restore'])
+  ->name('article.restore')
+  ->middleware('auth');

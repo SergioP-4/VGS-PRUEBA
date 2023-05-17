@@ -55,4 +55,24 @@
       </div>
     </a>
   </div>
+  <div class="mb-4">
+  <a use:inertia href={route('categories')} class="flex items-center group py-3">
+    <Icon
+      name="printer"
+      class="w-4 h-4 mr-2 {isUrl('categories') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
+    <div class={isUrl('categories') ? 'text-white' : 'text-indigo-300 group-hover:text-white'}>
+    Categories
+  </div>
+  </a>
+  </div>
+  <div class="mb-4">
+  <a use:inertia href={route('article')} class="flex items-center group py-3">
+    <Icon
+      name="printer"
+      class="w-4 h-4 mr-2 {isUrl('article') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'}" />
+    <div class={isUrl('article') ? 'text-white' : 'text-indigo-300 group-hover:text-white'}>
+    Reports
+  </div>
+  </a>
+  </div>
 </div>
